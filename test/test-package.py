@@ -1,6 +1,9 @@
+from pathlib import Path
+
 import pandas as pd
 from model.predict import make_prediction
 
-sample_input_data = pd.read_csv("~/test/bankchurn_test.csv")
+TEST_DIR = Path(__file__).resolve().parent
+sample_input_data = pd.read_csv(TEST_DIR / "bankchurn_test.csv")
 result = make_prediction(input_data=sample_input_data)
 print(result)
